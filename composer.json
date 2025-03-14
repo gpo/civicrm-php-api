@@ -25,11 +25,11 @@
     "psr/http-message": "*"
   },
   "require-dev": {
-    "guzzlehttp/guzzle": "^7.4",
-    "nyholm/psr7": "^1.5",
-    "pestphp/pest": "^1.21",
-    "phpstan/phpstan": "^1.4",
-    "phpunit/phpunit": "^9",
+    "guzzlehttp/guzzle": "*",
+    "nyholm/psr7": "*",
+    "pestphp/pest": "*",
+    "phpstan/phpstan": "*",
+    "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "*"
   },
   "autoload": {
@@ -50,7 +50,8 @@
     ],
     "pest": "pest",
     "phpstan": "phpstan analyse CiviCRM tests --memory-limit=-1",
-    "phpcs": "vendor/bin/phpcs --standard=PSR12 CiviCRM"
+    "phpcs": "vendor/bin/phpcs --standard=PSR12 CiviCRM",
+    "phpcbf": "vendor/bin/phpcbf --standard=PSR12 CiviCRM"
   },
   "config": {
     "sort-packages": true,

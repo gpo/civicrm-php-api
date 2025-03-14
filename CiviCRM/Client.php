@@ -12,6 +12,8 @@ use Psr\Http\Message\ResponseInterface;
 
 final class Client
 {
+    private static ?Client $instance = null;
+
     /**
      * Current version
      *
@@ -38,6 +40,30 @@ final class Client
      * @var array<string, string>
      */
     private array $defaultHeaders = ['X-Requested-With' => 'XMLHttpRequest'];
+
+    public static function getInstance(): Client
+    {
+        if (self::$instance === null) {
+            throw new RuntimeException('Client not initialized.');
+        }
+        return self::$instance;
+    }
+
+    /**
+     * @param ClientInterface $httpClient
+     * @param string $authenticationType
+     * @param string $authenticationKey
+     * @param array<string, string> $customHeaders
+     * @return void
+     */
+    public static function initializeSingleton(
+        ClientInterface $httpClient,
+        string $authenticationType,
+        string $authenticationKey,
+        array $customHeaders = []
+    ): void {
+        self::$instance = new self($httpClient, $authenticationType, $authenticationKey, $customHeaders);
+    }
 
     /**
      * Class constructor.
