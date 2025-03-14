@@ -19,10 +19,10 @@
   },
   "require": {
     "ext-json": "*",
-    "laminas/laminas-diactoros": "^2.9",
-    "psr/http-client": "^1.0.1",
-    "psr/http-factory": "^1.0",
-    "psr/http-message": "^1.0"
+    "laminas/laminas-diactoros": "*",
+    "psr/http-client": "*",
+    "psr/http-factory": "*",
+    "psr/http-message": "*"
   },
   "require-dev": {
     "guzzlehttp/guzzle": "^7.4",
