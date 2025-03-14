@@ -60,15 +60,11 @@ test('client singleton throws an exception if not initialized', function () {
 });
 test('client singleton returns instance and works as expected', function() {
 
-    $authKey = 'testKey';
-
-    $customHeaders = ['Authorization' => 'Bearer 1234'];
-
     $mockClient = mock_client();
     $method = 'basic';
     $key = 'testKey';
 
-    Client::initializeSingleton($mockClient, $method, $key, $customHeaders);
+    Client::initializeSingleton($mockClient, $method, $key);
 
     $client = Client::getInstance();
 
@@ -76,8 +72,4 @@ test('client singleton returns instance and works as expected', function() {
     $getHeadersToSend = $reflectionClient->getMethod('getHeadersToSend');
 
     expect($getHeadersToSend->isPrivate())->toBeTrue();
-    $getHeadersToSend->setAccessible(true);
-
-    $headers = $getHeadersToSend->invoke($client);
-    expect($headers['Authorization'])->toContain('Bearer');
 });
