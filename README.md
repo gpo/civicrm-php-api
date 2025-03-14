@@ -49,8 +49,9 @@ $guzzleOptions = ['base_uri' => 'https://my.civicrm.site'];
 // Instantiate a new Guzzle client
 $guzzleClient = new GuzzleHttp\Client($guzzleOptions);
 
+\Circle\CiviCRM\Client::initialize($guzzleClient, $authType, $authKey);
 // Instantiate a new CiviCRM API client, passing the Guzzle client as a parameter
-$civicrm = new \Circle\CiviCRM\Client($guzzleClient, $authType, $authKey);
+$civicrm = \Circle\CiviCRM\Client($guzzleClient, $authType, $authKey);
 
 // Make request to retrieve all Contacts
 $contactsResponse = $civicrm->get('Contact');
