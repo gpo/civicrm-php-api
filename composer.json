@@ -18,7 +18,6 @@
     "source": "https://github.com/circle-interactive/civicrm-api"
   },
   "require": {
-    "php": "^7.4 || ^8.0",
     "ext-json": "*",
     "laminas/laminas-diactoros": "^2.9",
     "psr/http-client": "^1.0.1",
