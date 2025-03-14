@@ -1,5 +1,5 @@
 {
-  "name": "circle-interactive/civicrm-api",
+  "name": "gpo/civicrm-php-api",
   "type": "library",
   "description": "An API library to enable and facilitate interacting with a remote CiviCRM site.",
   "keywords": ["civicrm", "remote api library", "developer api"],
