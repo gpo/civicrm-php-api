@@ -53,13 +53,11 @@ test('client allows custom headers to be transmitted in the request', function (
 });
 
 test('client singleton throws an exception if not initialized', function () {
-
-    // uninitialized client throws exception
     expect(fn() => Client::getInstance())
         ->toThrow(RuntimeException::class);
 });
-test('client singleton returns instance and works as expected', function() {
 
+test('client singleton returns instance and works as expected', function() {
     $mockClient = mock_client();
     $method = 'basic';
     $key = 'testKey';
